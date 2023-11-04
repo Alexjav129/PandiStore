@@ -1,0 +1,58 @@
+let shopItemsData = [
+  {
+    id: "ID01",
+    name: "Panditas",
+    price: 35,
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
+    img: "",
+  },
+  {
+    id: "ID02",
+    name: "Mango Enchilado",
+    price: 32,
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
+    img: "img/img-2.jpg",
+  },
+  {
+    id: "ID03",
+    name: "Gusanos de Gomita",
+    price: 20,
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
+    img: "img/img-3.jpg",
+  },
+  {
+    id: "ID04",
+    name: "Pasitas de Chocolate",
+    price: 45,
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
+    img: "img/img-4.jpg",
+  },
+  {
+    id: "ID05",
+    name: "Ferrero",
+    price: 45,
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
+    img: "img/img-5.png",
+  },
+  {
+    id: "ID06",
+    name: "Toblerone",
+    price: 55,
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
+    img: "img/img-7.png",
+  },
+  {
+    id: "ID07",
+    name: "Skwinkles",
+    price: 15,
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
+    img: "img/img-8.png",
+  },
+  {
+    id: "ID08",
+    name: "denim shirt",
+    price: 85,
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
+    img: "img/img-9.png",
+  },
+];
