@@ -15,7 +15,7 @@ let candyData = [
   },
   {
     id: "ID03",
-    name: "Gusanos de Gomita",
+    name: "Gummy Worms",
     price: 20,
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
     img: "img/product3.avif",
@@ -50,7 +50,7 @@ let candyData = [
   },
   {
     id: "ID08",
-    name: "",
+    name: "Sweet Arts",
     price: 85,
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
     img: "img/product8.jpeg",
