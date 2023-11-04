@@ -29,6 +29,7 @@ a {
   font-size: 30px;
   padding: 5px;
   border-radius: 4px;
+  margin-top: 10px;
 }
 
 .cartAmount {
@@ -40,4 +41,22 @@ a {
   color: white;
   padding: 3px;
   border-radius: 3px;
+}
+
+/* Shop items */
+.shop {
+  display: grid;
+  grid-template-columns: repeat(4, 223px);
+  gap: 100px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+@media (max-width: 1000px) {
+  .shop {
+    grid-template-columns: repeat(2, 223px);
+    gap: 50px;
+  }
 }
