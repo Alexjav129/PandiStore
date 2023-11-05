@@ -10,12 +10,6 @@ body {
 }
 
 .navbar {
-  /* background: rgb(34, 193, 195);
-  background: linear-gradient(
-    0deg,
-    rgba(34, 193, 195, 1) 30%,
-    rgba(176, 153, 102, 1) 100%
-  ); */
   background-image: url("../img/candy4.webp");
 }
 
@@ -121,4 +115,9 @@ a {
 
 .bi-plus-lg {
   color: green;
+}
+
+.imagenPanditas {
+  height: 200px;
+  overflow: hidden;
 }

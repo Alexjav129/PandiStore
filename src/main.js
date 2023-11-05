@@ -44,6 +44,18 @@ let incremenet = (id) => {
   } else {
     search.item += 1;
   }
+  Toastify({
+    text: "Item added to the basket",
+    duration: 1500,
+    offset: {
+      x: 50, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+      y: 10, // vertical axis - can be a number or a string indicating unity. eg: '2em'
+    },
+    style: {
+      background: "linear-gradient(to right, #00b09b, #96c93d)",
+    },
+  }).showToast();
+
   // console.log(basket);
   update(selectedItem.id);
 
@@ -59,6 +71,18 @@ let decrement = (id) => {
   else {
     search.item -= 1;
   }
+  Toastify({
+    text: "Item deleted from the basket",
+    className: "info",
+    duration: 1500,
+    offset: {
+      x: 50, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+      y: 10, // vertical axis - can be a number or a string indicating unity. eg: '2em'
+    },
+    style: {
+      background: "linear-gradient(to right, #fd1d1d, #fcb045)",
+    },
+  }).showToast();
 
   update(selectedItem.id);
   basket = basket.filter((x) => x.item !== 0);
