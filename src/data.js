@@ -22,7 +22,7 @@ let candyData = [
   },
   {
     id: "ID04",
-    name: "Pasitas de Chocolate",
+    name: "Chocolate raisins",
     price: 45,
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
     img: "img/product4.jpeg",

@@ -72,6 +72,12 @@ a {
   }
 }
 
+@media (max-width: 1250px) {
+  .shop {
+    gap: 20px;
+  }
+}
+
 @media (max-width: 520px) {
   .shop {
     grid-template-columns: repeat(1, 223px);
