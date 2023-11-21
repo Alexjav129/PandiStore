@@ -7,6 +7,8 @@ let calculation = () => {
   cartIcon.innerHTML = basket.map((x) => x.item).reduce((x, y) => x + y, 0);
 };
 
+calculation();
+
 let generateCartItems = () => {
   if (basket.length !== 0) {
     return (ShoppingCart.innerHTML = basket
@@ -28,7 +30,7 @@ let generateCartItems = () => {
                     <p>${name}</p>
                     <p class="cart-item-price">$ ${price}</p>
                 </h4>
-                <i class="bi bi-x-lg"></i>
+                <i onclick="removeItem(${id})" class="bi bi-x-lg"></i>
             </div>
 
             <div class="buttons">
@@ -68,6 +70,17 @@ let increment = (id) => {
   } else {
     search.item += 1;
   }
+  Toastify({
+    text: "Item added to the basket",
+    duration: 1500,
+    offset: {
+      x: 50, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+      y: 10, // vertical axis - can be a number or a string indicating unity. eg: '2em'
+    },
+    style: {
+      background: "linear-gradient(to right, #00b09b, #96c93d)",
+    },
+  }).showToast();
 
   generateCartItems();
   update(selectedItem.id);
@@ -83,6 +96,18 @@ let decrement = (id) => {
   else {
     search.item -= 1;
   }
+  Toastify({
+    text: "Item deleted from the basket",
+    className: "info",
+    duration: 1500,
+    offset: {
+      x: 50, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+      y: 10, // vertical axis - can be a number or a string indicating unity. eg: '2em'
+    },
+    style: {
+      background: "linear-gradient(to right, #fd1d1d, #fcb045)",
+    },
+  }).showToast();
 
   update(selectedItem.id);
   basket = basket.filter((x) => x.item !== 0); // the moment the quantity is 0, this line will run
@@ -95,4 +120,51 @@ let update = (id) => {
   let search = basket.find((x) => x.id === id);
   document.getElementById(id).innerHTML = search.item;
   calculation();
+  TotalAmount();
 };
+
+let removeItem = (item) => {
+  let selectedItem = item;
+  basket = basket.filter((x) => x.id !== selectedItem.id);
+  generateCartItems();
+  TotalAmount();
+  calculation();
+  localStorage.setItem("data", JSON.stringify(basket));
+};
+
+let clearCart = () => {
+  basket = [];
+  //once we are done removing all the items from the basket
+  // we also want to rerender the cards
+
+  Swal.fire({
+    position: "center",
+    icon: "info",
+    title: "Your Cart is Now Empty",
+    showConfirmButton: false,
+    timer: 1500,
+  });
+
+  generateCartItems();
+  calculation();
+  localStorage.setItem("data", JSON.stringify(basket));
+};
+
+let TotalAmount = () => {
+  if (basket.length !== 0) {
+    let amount = basket
+      .map((x) => {
+        let { item, id } = x;
+        let search = candyData.find((y) => y.id === id) || [];
+        return item * search.price;
+      })
+      .reduce((x, y) => x + y, 0);
+    label.innerHTML = `
+  <h2>Total Bill:$ ${amount}</h2>
+  <button class="checkout">Checkout</button>
+  <button onclick="clearCart()" class="removeAll">Clear Cart</button>
+  `;
+  }
+};
+
+TotalAmount();
