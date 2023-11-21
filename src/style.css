@@ -121,3 +121,10 @@ a {
   height: 200px;
   overflow: hidden;
 }
+
+/* Css for cart.js*/
+/* Styles for labels and some buttons */
+.text-center {
+  text-align: center;
+  margin-bottom: 20px;
+}
