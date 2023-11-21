@@ -26,9 +26,9 @@ let generateCartItems = () => {
         <div class="details">
       
             <div class="title-price-x">
-                <h4>
+                <h4 class="title-price">
                     <p>${name}</p>
-                    <p class="cart-item-price">$ ${price}</p>
+                    <p class="cart-item-price">$${price}</p>
                 </h4>
                 <i onclick="removeItem(${id})" class="bi bi-x-lg"></i>
             </div>
@@ -48,7 +48,7 @@ let generateCartItems = () => {
   } else {
     ShoppingCart.innerHTML = ``;
     label.innerHTML = `
-    <h2>You haven't add any Candy 🙁</h2>
+    <h2 class="emptyCart">You haven't add any Candy 🙁</h2>
     <a href="index.html">
         <button class="Homebtn">Back to PandiStore</button>
     </a>
@@ -170,7 +170,7 @@ let TotalAmount = () => {
       })
       .reduce((x, y) => x + y, 0);
     label.innerHTML = `
-  <h2>Total Bill:$ ${amount}</h2>
+  <h2 class="totalBill">Total Bill:$ ${amount}</h2>
   <button onclick="checkOut()" class="checkout">Checkout</button>
   <button onclick="clearCart()" class="removeAll">Clear Cart</button>
   `;
