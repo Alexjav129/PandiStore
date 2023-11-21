@@ -168,6 +168,7 @@ a {
   grid-template-columns: repeat(1, 320px);
   justify-content: center;
   gap: 15px;
+  margin-bottom: 5rem;
 }
 
 /* Styles for card items */

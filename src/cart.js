@@ -126,6 +126,17 @@ let update = (id) => {
 let removeItem = (item) => {
   let selectedItem = item;
   basket = basket.filter((x) => x.id !== selectedItem.id);
+
+  Toastify({
+    text: "Same group of items deleted from the basket",
+    duration: 1500,
+    ravity: "top", // `top` or `bottom`
+    position: "center", // `left`, `center` or `right
+    style: {
+      background: "linear-gradient(to right, #fde41d, #96c93d)",
+    },
+  }).showToast();
+
   generateCartItems();
   TotalAmount();
   calculation();
