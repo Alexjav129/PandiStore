@@ -150,6 +150,16 @@ let clearCart = () => {
   localStorage.setItem("data", JSON.stringify(basket));
 };
 
+let checkOut = () => {
+  Swal.fire({
+    position: "center",
+    icon: "success",
+    title: "You have just sweetened your day 🍭 !",
+    showConfirmButton: false,
+    timer: 1500,
+  });
+};
+
 let TotalAmount = () => {
   if (basket.length !== 0) {
     let amount = basket
@@ -161,7 +171,7 @@ let TotalAmount = () => {
       .reduce((x, y) => x + y, 0);
     label.innerHTML = `
   <h2>Total Bill:$ ${amount}</h2>
-  <button class="checkout">Checkout</button>
+  <button onclick="checkOut()" class="checkout">Checkout</button>
   <button onclick="clearCart()" class="removeAll">Clear Cart</button>
   `;
   }
