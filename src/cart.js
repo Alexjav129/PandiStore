@@ -128,8 +128,8 @@ let removeItem = (item) => {
   basket = basket.filter((x) => x.id !== selectedItem.id);
 
   Toastify({
-    text: "Same group of items deleted from the basket",
-    duration: 1500,
+    text: "Group of items deleted from the basket",
+    duration: 2500,
     ravity: "top", // `top` or `bottom`
     position: "center", // `left`, `center` or `right
     style: {
@@ -153,7 +153,7 @@ let clearCart = () => {
     icon: "info",
     title: "Your Cart is Now Empty",
     showConfirmButton: false,
-    timer: 1500,
+    timer: 2500,
   });
 
   generateCartItems();
@@ -167,8 +167,13 @@ let checkOut = () => {
     icon: "success",
     title: "You have just sweetened your day 🍭 !",
     showConfirmButton: false,
-    timer: 1500,
+    timer: 3500,
   });
+
+  basket = [];
+  generateCartItems();
+  calculation();
+  localStorage.setItem("data", JSON.stringify(basket));
 };
 
 let TotalAmount = () => {
