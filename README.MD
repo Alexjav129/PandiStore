@@ -43,7 +43,7 @@ This file holds an array of candy data objects containing information such as na
   |    |-- candy2.jpg
   |    |-- ... (other candy images)
   |
-  |-- 🖼️ src
+  |-- 📁 src
   |    |-- cart.js
   |    |-- main.js
   |    |-- data
